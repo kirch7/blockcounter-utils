@@ -1,2 +1,2 @@
 # blockcounter-utils
-Utilities to handling blocks in files
+Utilities to handling blocks in files.

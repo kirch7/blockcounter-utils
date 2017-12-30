@@ -1,0 +1,22 @@
+[package]
+name = "blockcounter-utils"
+version = "0.1.0"
+authors = ["Cássio Kirch <cassiokirch@gmail.com>"]
+build = "build.rs"
+
+[[bin]]
+name = "blockcounter"
+path = "blockcounter/main.rs"
+
+[dependencies]
+blockcounter = "0.2.4"
+clap = { version = "2.29.0", features = ["yaml"] }
+
+[build-dependencies]
+linked-hash-map = "0.5.0"
+yaml-rust = "0.4.0"
+
+[target.'cfg(not(windows))'.dependencies]
+isatty = "0.1.6"
+
+[workspace]
