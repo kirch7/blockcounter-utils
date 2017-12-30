@@ -4,15 +4,13 @@ use yaml_rust::yaml::YamlLoader;
 use yaml_rust::Yaml;
 use yaml_rust::emitter::YamlEmitter;
 
-const IN_YAML:  &str = "blockcounter/en_base.yml";
-const OUT_YAML: &str = "blockcounter/en.yml";
-
-fn main() {
+fn take_data_off(tuple: (&str, &str)) {
     use std::fs::File;
+    let (in_filename, out_filename) = tuple;
     let in_yaml = {
         use std::io::Read;
         let mut s = String::new();
-        let mut file = File::open(IN_YAML)
+        let mut file = File::open(in_filename)
             .unwrap();
         let _ = file.read_to_string(&mut s);
         s
@@ -62,11 +60,23 @@ fn main() {
 
     let _ = {
         use std::io::Write;
-        let mut file = File::create(OUT_YAML)
+        let mut file = File::create(out_filename)
             .unwrap();
         let _ = file
             .write(out_yaml_string.as_bytes())
             .unwrap();
         ()
     };
+}
+
+fn main() {
+    let paths = {
+        let mut v = Vec::new();
+        v.push(("blockcounter/en_base.yml", "blockcounter/en.yml"));
+        v.push(("showblock/en_base.yml",    "showblock/en.yml"));
+        v
+    };
+    for tuple in paths {
+        take_data_off(tuple);
+    }
 }
