@@ -3,9 +3,13 @@ about: Count the blocks in a file.
 args:
   - DATA:
       help: path to file containing the data
+      short: d
+      long: data
       required: true
       empty_values: false
       multiple: false
+      value_name: DATA
+      takes_value: true
   - TOLERANCE:
       help: Amount of blank lines separating blocks (default is 2)
       short: b
