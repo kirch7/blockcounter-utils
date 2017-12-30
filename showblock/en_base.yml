@@ -1,0 +1,36 @@
+name: Show block
+about: Prints the specified block.
+args:
+  - DATA:
+      help: path to file containing the data
+      short: d
+      long: data
+      required: true
+      empty_values: false
+      multiple: false
+      value_name: DATA
+      takes_value: true
+  - BLOCK:
+      help: Block index
+      short: i
+      long: index
+      required: true
+      empty_values: false
+      multiple: false
+      value_name: BLOCK
+      takes_value: true
+  - TOLERANCE:
+      help: Amount of blank lines separating blocks (default is 2)
+      short: b
+      long: blank
+      required: false
+      multiple: false
+      value_name: TOLERANCE
+      takes_value: true
+      empty_values: false
+  # - VERBOSE:
+  #     help: Level of verbosity
+  #     short: v
+  #     required: false
+  #     multiple: true
+  #     takes_value: false
