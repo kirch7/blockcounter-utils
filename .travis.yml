@@ -1,0 +1,22 @@
+sudo: false
+
+language: rust
+
+cache: cargo
+
+rust:
+  - stable
+
+os:
+  - linux
+  - osx
+
+script:
+  - cargo build --verbose --all
+  - cargo test --verbose --all
+
+notifications:
+  email:
+    recipients:
+      - cassiokirch@gmail.com
+    on_success: always
