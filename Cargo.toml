@@ -1,15 +1,15 @@
 [package]
 name = "blockcounter-utils"
-version = "0.1.0"
-authors = ["Cássio Kirch <cassiokirch@gmail.com>"]
+version = "0.1.1"
+authors = ["Cássio Kirch <cassio@kirch7.com>"]
 build = "build.rs"
 description = "Utilities to handling blocks in files."
 keywords = ["gnuplot", "text", "file"]
 categories = ["science", "command-line-utilities", "text-processing"]
 documentation = "https://github.com/kirch7/blockcounter-utils/blob/master/README.md"
-license = "GPL-3.0"
+license = "MIT"
 readme = "README.md"
-repository = "https://github.com/kirch7/parallel-gnuplot"
+repository = "https://github.com/kirch7/blockcounter-utils"
 
 [[bin]]
 name = "blockcounter"
